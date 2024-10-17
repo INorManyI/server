@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationInfoController;
 
 Route::controller(ApplicationInfoController::class)
