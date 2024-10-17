@@ -1,7 +1,12 @@
 <?php
 
-require __DIR__.'/users.php';
-require __DIR__.'/user_policy/permissions.php';
-require __DIR__.'/user_policy/roles.php';
-require __DIR__.'/application_info.php';
-require __DIR__.'/auth.php';
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApplicationInfoController;
+
+Route::controller(ApplicationInfoController::class)
+    ->prefix('/application-info')
+    ->group(function () {
+        Route::get('/php', 'getPhpInfo');
+        Route::get('/client', 'getClientInfo');
+        Route::get('/database', 'getDatabaseInfo');
+    });
