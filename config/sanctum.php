@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'expiration' => null,
+    'expiration' => env('SANCTUM_TOKEN_EXPIRATION', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,6 +62,8 @@ return [
     */
 
     'token_prefix' => env('SANCTUM_TOKEN_PREFIX', ''),
+
+    'max_tokens' => env('SANCTUM_MAX_TOKENS', 12),
 
     /*
     |--------------------------------------------------------------------------
