@@ -39,7 +39,11 @@ class ApplicationInfoController
             'username' => config("database.connections.$driver.username"),
             'password' => config("database.connections.$driver.password"),
             'charset' => config("database.connections.$driver.charset"),
-            'prefix' => config("database.connections.$driver.prefix")
+            'collation' => config("database.connections.$driver.collation"),
+            'prefix' => config("database.connections.$driver.prefix"),
+            'schema' => config("database.connections.$driver.schema"),
+            'engine' => config("database.connections.$driver.engine"),
+            'options' => config("database.connections.$driver.options"),
         ]);
     }
 }
