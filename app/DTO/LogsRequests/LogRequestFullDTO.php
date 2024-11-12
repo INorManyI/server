@@ -64,15 +64,16 @@ class LogRequestFullDTO
             $logRequest->http_method,
             $logRequest->controller,
             $logRequest->controller_method,
-            $logRequest->request_body ? json_decode($logRequest->request_body, true) : null,
-            $logRequest->request_headers ? json_decode($logRequest->request_headers, true) : null,
+            is_string($logRequest->request_body) ? json_decode($logRequest->request_body, true) : $logRequest->request_body,
+            is_string($logRequest->request_headers) ? json_decode($logRequest->request_headers, true) : $logRequest->request_headers,
             $logRequest->user_id,
             $logRequest->user_ip,
             $logRequest->user_agent,
             $logRequest->response_status,
-            $logRequest->response_body ? json_decode($logRequest->response_body, true) : null,
-            $logRequest->response_headers ? json_decode($logRequest->response_headers, true) : null,
+            is_string($logRequest->response_body) ? json_decode($logRequest->response_body, true) : $logRequest->response_body,
+            is_string($logRequest->response_headers) ? json_decode($logRequest->response_headers, true) : $logRequest->response_headers,
             $logRequest->created_at->toDateTimeString(),
         );
     }
+
 }
