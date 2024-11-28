@@ -12,15 +12,15 @@ return [
     /**
      * Максимальный срок (в минутах) выполнения задачи
      */
-    'max_execution_time' => env("{$prefix}MAX_EXECUTION_TIME", 5),
+    'max_execution_time' => env("{$prefix}MAX_EXECUTION_TIME", 2),
 
     /**
      * Таймаут между повторениями (в минутах) операции
      */
-    'attempt_timeout' => env("{$prefix}ATTEMPT_TIMEOUT", 30),
+    'attempt_timeout' => env("{$prefix}ATTEMPT_TIMEOUT", 1000),
 
     /**
      * Количество повторений задачи
      */
-    'max_attempts' => env("{$prefix}MAX_ATTEMPTS", 3),
+    'max_attempts' => env("{$prefix}MAX_ATTEMPTS", 2),
 ];
